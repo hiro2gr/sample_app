@@ -51,10 +51,22 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest',                 '5.10.3'
+  gem 'minitest-reporters',       '1.1.14'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
+end
+
 group :production do
   gem 'pg', '0.20.0'
 end
 
+# →https://stackoverflow.com/questions/35395733/loaderror-cannot-load-such-file-minitest-reporters
+# を追加。
+# gem 'minitest', group: :test
+# gem 'minitest-reporters', group: :test
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
